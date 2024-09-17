@@ -1,0 +1,15 @@
+---
+const links = [
+    { name: 'Home', href: '/' },
+    { name: 'Stageband', href: '/stageband' },
+    { name: 'About', href: '/about' },
+    { name: 'Shows', href: '/shows' },
+    { name: 'Media', href: '/media' },
+    { name: 'Contact', href: '/contact' },
+]
+---
+<nav class="bg-blue-300">
+    <ul class="flex gap-2 justify-center">
+        {links.map(link => <li><a href={link.href}>{link.name}</a></li>)}
+    </ul>
+</nav>
