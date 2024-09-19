@@ -1,10 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+const allAlbumsPosts = await getCollection('albums');
+const allVideosPosts = await getCollection('videos');
 ---
 
 <Layout title="media">
 	<main>
 		<div class="bg-white flex justify-center">media</div>
+<div class="bg-red-300 flex flex-col">
+<h2>Albums</h2>
+	{allAlbumsPosts.map((post) => (
+		<div>
+			<h2 class="font-bold">{post.data.title}</h2>
+			<h3>{post.body}</h3>
+		</div>
+	))}
+</div>
+
+<div class="bg-green-300">
+	<h2>Videos</h2>
+		{allVideosPosts.map((post) => (
+			<div>
+				<h2 class="font-bold">{post.data.title}</h2>
+				<h3>{post.body}</h3>
+			</div>
+		))}
+	
+	
+	</div>
+
 	</main>
 </Layout>
 
