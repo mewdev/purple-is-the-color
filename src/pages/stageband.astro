@@ -1,10 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+const allConcerts = await getCollection('stageband');
 ---
 
 <Layout title="index">
 	<main>
-		<div class="bg-white flex justify-center">stageband</div>
+		<div class="bg-green-300 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+			{allConcerts.map((concert) => (
+	
+	<a target="_blank" href={concert.data.url}>
+
+
+<div class="flex flex-col justify-center items-center">
+					<Image loading="lazy" class="w-60 h-60 object-cover" src={concert.data.flyer} alt={concert.data.title} />
+					<h2 class="font-bold">{concert.data.title}</h2>
+					<span class="font-bold">{concert.data.date}</span>
+				</div>
+
+
+
+
+	</a>
+			))}
+		
+		
+		</div>
 	</main>
 </Layout>
 

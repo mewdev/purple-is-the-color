@@ -23,8 +23,22 @@ const videosCollection = defineCollection({
   }),
 });
 
+const stagebandCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.date(),
+      flyer: image().refine((img) => img.width >= 400, {
+        message: "Cover image must be at least 400 pixels wide!",
+      }),
+      url: z.string(),
+    }),
+});
+
 // 3. Export multiple collections to register them
 export const collections = {
   albums: albumsCollection,
   videos: videosCollection,
+  stageband: stagebandCollection,
 };
