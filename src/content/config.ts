@@ -11,6 +11,7 @@ const albumsCollection = defineCollection({
       cover: image().refine((img) => img.width >= 400, {
         message: "Cover image must be at least 400 pixels wide!",
       }),
+      url: z.string(),
     }),
 });
 
