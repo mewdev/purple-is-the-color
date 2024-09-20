@@ -4,9 +4,14 @@ import { z, defineCollection } from "astro:content";
 // 2. Define your collections
 const albumsCollection = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      year: z.number(),
+      cover: image().refine((img) => img.width >= 400, {
+        message: "Cover image must be at least 400 pixels wide!",
+      }),
+    }),
 });
 
 const videosCollection = defineCollection({
