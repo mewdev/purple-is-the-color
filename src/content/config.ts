@@ -18,6 +18,8 @@ const videosCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    thumbnail: z.string(),
+    url: z.string(),
   }),
 });
 

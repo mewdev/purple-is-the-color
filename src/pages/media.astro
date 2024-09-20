@@ -1,31 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SquareImage from '../components/SquareImage.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 const allAlbums = await getCollection('albums');
 const allVideos = await getCollection('videos');
-console.log(allAlbums)
+console.log(allVideos)
+
 ---
 
 <Layout title="media">
 	<main>
 		<div class="bg-white flex justify-center">media</div>
 <div class="bg-red-300 flex items-center justify-center">
-	{allAlbums.map((post) => (
+	{allAlbums.map((album) => (
 		<div class="flex flex-col w-fit items-center justify-center">
-			<Image class="w-1/2 h-1/2"src={post.data.cover} alt={post.data.title} />
-			<h4 class="text-6xl font-bold">{post.data.title}<span class="font-thin">{post.data.year}</span></h4>
+			<Image loading="lazy" class="w-1/2 h-1/2"src={album.data.cover} alt={album.data.title} />
+			<h4 class="text-6xl font-bold">{album.data.title}<span class="font-thin">{album.data.year}</span></h4>
 		</div>
 	))}
 </div>
 
-<div class="bg-green-300">
-	<h2>Videos</h2>
-		{allVideos.map((post) => (
-			<div>
-				<h2 class="font-bold">{post.data.title}</h2>
-				<h3>{post.body}</h3>
+<div class="bg-green-300 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+		{allVideos.map((video) => (
+
+<a target="_blank" href={video.data.url}>
+
+			<div class="flex flex-col justify-center items-center">
+				<SquareImage>
+					<img loading="lazy" class="absolute inset-0 w-full h-full object-cover" src={video.data.thumbnail} alt={video.data.title} />
+				</SquareImage>
+
+				<h2 class="font-bold">{video.data.title}</h2>
 			</div>
+
+
+</a>
+
+
 		))}
 	
 	
