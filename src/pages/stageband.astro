@@ -4,8 +4,17 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 const allConcerts = await getCollection('stageband');
 ---
+<Layout title="stageband">
+	<main>
+		<section id="stageband" class="flex flex-col h-screen justify-end bg-black">
+			<h1 class="text-white font-monumentBold text-justify text-8xl md:text-9xl lg:text-10xl leading-none uppercase">Stageband</h1>
+		</section>
+	</main>
+</Layout>
 
-<Layout title="index">
+
+
+<!-- <Layout title="index">
 	<main>
 		<div class="bg-green-300 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 			{allConcerts.map((concert) => (
@@ -29,4 +38,4 @@ const allConcerts = await getCollection('stageband');
 		</div>
 	</main>
 </Layout>
-
+ -->
