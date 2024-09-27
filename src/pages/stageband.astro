@@ -6,8 +6,26 @@ const allConcerts = await getCollection('stageband');
 ---
 <Layout title="stageband">
 	<main>
-		<section id="stageband" class="flex flex-col h-screen justify-end bg-black">
-			<h1 class="text-white font-monumentBold text-justify text-8xl md:text-9xl lg:text-10xl leading-none uppercase">Stageband</h1>
+		<section id="stageband" class="flex flex-col h-screen justify-end bg-black overflow-x-auto">
+			<ul class="flex flex-col w-screen">
+
+				{allConcerts.map(concert => {
+
+					const date = new Date(concert.data.date);
+					const month = date.toLocaleString('default', { month: 'long' });
+					const day = date.toLocaleString('default', { day: 'numeric' });
+
+					return(
+					<li class="relative font-light text-5xl text-white after:absolute after:bg-white after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+					<a class="flex justify-between" href={concert.data.url} target="_blank">
+					  <span>{day + "."}</span>
+					  <span class="inline-block">{month}</span>
+					</a>
+				  </li>
+					)
+				})}
+
+			</ul>
 		</section>
 	</main>
 </Layout>

@@ -8,7 +8,19 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 <Layout title="index">
 	<main>
 		<section id="hero-section" class="flex flex-col h-screen justify-end bg-cover bg-bottom" style={`background-image: url(${optimizedBackground.src});`}>
-			<h1 class="text-white font-monumentBold text-justify text-8xl md:text-9xl lg:text-10xl leading-none uppercase">Purple is the Color</h1>
+			<!-- <h1 class="text-white font-monumentBold text-justify text-7xl md:text-8xl lg:text-9xl leading-none uppercase">Purple is the Color</h1> -->
+
+			<h1 class="text-white font-monumentBold text-7xl md:text-8xl lg:text-9xl leading-none uppercase flex flex-col justify-between">
+				<div class="flex justify-between">
+				  <span>Purple</span>
+				  <span>is</span>
+				</div>
+				<div class="flex justify-between">
+				  <span>the</span>
+				  <span>Color</span>
+				</div>
+			  </h1>
+
 		</section>
 	</main>
 </Layout>
