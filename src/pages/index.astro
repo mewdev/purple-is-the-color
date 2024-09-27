@@ -6,9 +6,8 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 ---
 
 <Layout title="index">
-	<main class="overflow-hidden h-screen">
 		<!-- // md and larger -->
-		<section id="hero-section" class=" hidden md:flex flex-col h-screen justify-end bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: url(${optimizedBackground.src}), linear-gradient(to top, black 40%, #97327D 85%);`}>
+		<section id="hero-section" class=" hidden md:flex flex-col h-[95vh] justify-end bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: url(${optimizedBackground.src}), linear-gradient(to top, black 30%, #6A3160 85%);`}>
 			<!-- <h1 class="text-white font-monumentBold text-justify text-7xl md:text-8xl lg:text-9xl leading-none uppercase">Purple is the Color</h1> -->
 
 <!-- #97327D -->
@@ -53,7 +52,6 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 
 
 
-	</main>
-</Layout>
+	</Layout>
 
 

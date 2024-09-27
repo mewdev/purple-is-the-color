@@ -20,14 +20,25 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative">
-		<Header />
+	<body class="bg-black">
+
+<!-- Layout -->
+<div class="relative flex flex-col justify-between h-[100vh] w-screen">
+	<Header />
+	<div class="h-[90vh]">
+		<slot />
+	</div>
+	<Footer />
+</div>
+
+
+		<!-- <Header />
 		<main class="overflow-hidden h-screen">
 		<div class="flex flex-col justify-between">
 			<slot />
-		</div>	
+		</div>
 		</main>
-		<Footer />
+		<Footer /> -->
 	</body>
 </html>
 
