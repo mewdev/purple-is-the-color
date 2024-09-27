@@ -18,7 +18,7 @@ const allConcerts = await getCollection('stageband');
 					const day = date.toLocaleString('default', { day: 'numeric' });
 
 					return(
-					<li class="relative font-light text-5xl text-white after:absolute after:bg-white after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+					<li class="relative font-extralight text-5xl text-white after:absolute after:bg-white after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
 					<a class="flex justify-between" href={concert.data.url} target="_blank">
 					  <span>{day + "."}</span>
 					  <span class="inline-block">{month}</span>
