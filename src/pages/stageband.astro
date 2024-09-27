@@ -4,8 +4,10 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 const allConcerts = await getCollection('stageband');
 ---
+<!-- 1. Link hover overflow glitch! -->
+ <!-- 2. Shows styling! -->
+  <!-- 3. Images on hover? -->
 <Layout title="stageband">
-	<main>
 		<section id="stageband" class="flex flex-col h-screen justify-end bg-black overflow-x-auto">
 			<ul class="flex flex-col w-screen">
 
@@ -27,7 +29,6 @@ const allConcerts = await getCollection('stageband');
 
 			</ul>
 		</section>
-	</main>
 </Layout>
 
 
