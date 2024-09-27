@@ -6,6 +6,10 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        matteBlack: "#171717",
+        matteWhite: "#F5F5F5",
+      },
       fontSize: {
         "10xl": "10rem",
       },

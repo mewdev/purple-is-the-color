@@ -7,11 +7,25 @@ const allAlbums = await getCollection('albums');
 const allVideos = await getCollection('videos');
 ---
 <Layout title="music">
-	<main>
-		<section id="shows" class="flex flex-col h-screen justify-end bg-black">
-			<h1 class="text-white font-monumentBold text-justify text-8xl md:text-9xl lg:text-10xl leading-none uppercase">Music</h1>
+		<section id="shows" class="flex flex-col h-[95vh] justify-center">
+
+			<div class="flex gap-2 overflow-x-auto max-w-screen">
+
+			{allVideos.map(video => {
+				return(
+				<div class="relative w-60 h-56">
+					<SquareImage>
+						<img loading="lazy" class="grayscale w-full h-full absolute inset-0 object-cover" src={video.data.thumbnail} alt={video.data.title} />
+					</SquareImage>
+				</div>
+				)
+			})}
+
+			</div>
+
+
+
 		</section>
-	</main>
 </Layout>
 
 
