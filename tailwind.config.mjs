@@ -62,8 +62,8 @@ export default {
       animation: {
         slowpulse: "slowpulse 35s infinite",
         noise: "noise 0.25s infinite",
-        marquee: "marquee 70s linear infinite",
-        marquee2: "marquee2 70s linear infinite",
+        marquee: "marquee 150s linear infinite",
+        marquee2: "marquee2 150s linear infinite",
       },
       colors: {
         matteBlack: "#171717",

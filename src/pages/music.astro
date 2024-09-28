@@ -1,23 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SquareImage from '../components/SquareImage.astro';
+import MusicItem from '../components/MusicItem.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 const allAlbums = await getCollection('albums');
 const allVideos = await getCollection('videos');
 ---
 <Layout title="music">
-		<section id="shows" class="flex flex-col h-full justify-center">
+		<section id="shows" class="flex flex-col h-full justify-end gap-2">
 
-			<div class="flex gap-2 overflow-x-auto max-w-screen">
+			<div class="grid grid-cols-2 md:grid-cols-5 gap-2 max-w-screen">
+				{allAlbums.map(album => {
+					return(
+						<div class="">
+							<a href={album.data.url} target="_blank">
+								<Image loading="lazy" class="h-full w-full grayscale hover:grayscale-0 object-cover" src={album.data.cover} alt={album.data.title} width={1920} height={1080} />
+							</a>
+							</div>
+	
+					)
+				})}
+	
+				</div>
 
+			<div class="grid grid-cols-3 md:grid-cols-5 gap-2 max-w-screen">
 			{allVideos.map(video => {
 				return(
-				<div class="relative w-60 h-56">
-					<SquareImage>
-						<img loading="lazy" class="grayscale w-full h-full absolute inset-0 object-cover" src={video.data.thumbnail} alt={video.data.title} />
-					</SquareImage>
-				</div>
+						<a href={video.data.url} target="_blank">
+							<Image loading="lazy" class="h-full w-full grayscale hover:grayscale-0 object-cover" src={video.data.thumbnail} alt={video.data.title} width={1920} height={1080} />
+						</a>
+
 				)
 			})}
 
