@@ -7,11 +7,7 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 
 <Layout title="index">
 		<!-- // md and larger -->
-		<section id="hero-section" class=" hidden md:flex flex-col h-[100vh] justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: url(${optimizedBackground.src}), linear-gradient(to top, black 30%, #6A3160 85%);`}>
-			<!-- <h1 class="text-white font-monumentBold text-justify text-7xl md:text-8xl lg:text-9xl leading-none uppercase">Purple is the Color</h1> -->
-
-<!-- #97327D -->
-
+		<section id="hero-section" class=" hidden md:flex flex-col h-dvh justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: url(${optimizedBackground.src}), linear-gradient(to top, black 30%, #6A3160 85%);`}> 
 			<h1 class="text-white font-monumentBold mt-auto text-4xl md:text-8xl lg:text-9xl uppercase flex flex-col justify-between">
 				<div class="flex justify-between">
 				  <span>Purple</span>
@@ -26,13 +22,8 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 		</section>
 
 
-
-
 		<!-- // sm and smaller -->
-		<section id="hero-section" class="md:hidden h-[100vh] justify-center flex flex-col" style={`background-image: linear-gradient(to top, black 40%, #97327D 85%);`}>
-			<!-- <h1 class="text-white font-monumentBold text-justify text-7xl md:text-8xl lg:text-9xl leading-none uppercase">Purple is the Color</h1> -->
-
-<!-- #97327D -->
+		<section id="hero-section" class="md:hidden h-dvh justify-center flex flex-col" style={`background-image: linear-gradient(to top, black 40%, #97327D 85%);`}>
 <Image class="w-full h-full object-contain" src={optimizedBackground.src} alt="Purple is the Color" height={"1080"} width={"1920"} />
 			<h1 class="text-white font-monumentBold text-5xl md:text-8xl lg:text-9xl uppercase flex flex-col justify-between">
 				<div class="flex justify-between">
