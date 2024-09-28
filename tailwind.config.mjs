@@ -50,10 +50,20 @@ export default {
             transform: "translate(5%, 0)",
           },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
       animation: {
-        slowpulse: "slowpulse 50s infinite",
+        slowpulse: "slowpulse 35s infinite",
         noise: "noise 0.25s infinite",
+        marquee: "marquee 70s linear infinite",
+        marquee2: "marquee2 70s linear infinite",
       },
       colors: {
         matteBlack: "#171717",

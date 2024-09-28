@@ -1,18 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from "astro:assets";
-import aboutBackground from "../images/about_image.jpg";
+import MarqueeQuote from '../components/MarqueeQuote.astro';
 ---
-
-<!-- // quote element?  -->
- <!-- mobile view solve -->
-  <!-- interactiver movement image -->
- <!-- Links? :: ASI NE -->
-  <!-- Image cut from the bottom  -->
-  <!-- Text leave at the botton  -->
 <Layout title="about">
-		<section id="about" class="flex flex-col h-full justify-center">
-<!-- <Image src={aboutBackground} alt={"decorative abstract purple image"} width={1920} height={200}/> -->
+		<section id="about" class="flex flex-col h-full justify-end">
 	<p class="font-extralight text-matteWhite uppercase md:text-3xl leading-none text-justify">
 		“Epic" is Purple is the Color’s second album and a clarion call in jazz. Following their successful debut “Unmasked,” the quartet returns with a bold vision. Bandleader Simon Raab describes their aspiration: “The Beatles of jazz, that’s the plan.
 		This album showcases compositions by Štěpán Flagar, Martin Kocián, and Michał Wierzgoń, contributing to a vibrant musical unity. Raab emphasizes the narrative of great ventures and painful new beginnings: “The Titanic had to sink to be reborn as a legend.”
@@ -20,6 +11,8 @@ import aboutBackground from "../images/about_image.jpg";
 		Tracks like <span class="font-thin italic">“Unsearchable,”</span> <span class="font-thin italic">“Techno-Epic,”</span> and <span class="font-thin italic">“When I See Your Face,”</span> invite listeners on a transformative journey. The band practices radical self-restraint, exploring their instruments without digital shortcuts. Raab believes true autonomy emerges from deep exploration.
 		
 		With this release, the quartet proves they cannot be overlooked in the international jazz scene, marking one of the albums of the year!	</p>
+
+		<MarqueeQuote />
 
 		</section>
 </Layout>

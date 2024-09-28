@@ -4,4 +4,3 @@ import myBackground from "../images/textures/002.jpg";
 const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 ---
 <div class="fixed rounded-full inset-0 h-full md:bg-cover blur-lg animate-slowpulse" style={`background-image: url(${optimizedBackground.src})`}></div>
-<div class="fixed md:hidden inset-0 h-full z-10" style="background: linear-gradient(to top, black 30%, transparent 60%);"></div>
