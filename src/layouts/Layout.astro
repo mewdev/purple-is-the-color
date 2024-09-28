@@ -25,12 +25,12 @@ const { title } = Astro.props;
 	<body class="bg-matteBlack" transition:animate={fade({ duration: '1.5s'})}>
 
 <!-- Layout -->
-<div class="relative flex flex-col justify-between h-[100vh] w-screen">
+<div class="relative flex flex-col h-dvh justify-between w-screen">
 	<Header />
-	<main class="h-dvh overflow-hidden">
+	<main class="flex-grow">
 		<slot />
 	</main>
-	<!-- <Footer /> -->
+	<Footer />
 </div>
 
 
