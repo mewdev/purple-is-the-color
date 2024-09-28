@@ -2,9 +2,13 @@
 import HeaderLine from "./HeaderLine.astro"
 import Social from "./Social.astro"
 import Navbar from "./Navbar.astro"
+import HomeLink from "./HomeLink.astro"
+const currentPath = Astro.url.pathname
+const isHome = currentPath === '/'
 ---
 <header class="h-[5lvh] z-10 fixed flex items-center w-screen">
-    <Social />
+    {isHome ? <Social /> : <HomeLink />}
     <HeaderLine />
     <Navbar />
 </header>
+
