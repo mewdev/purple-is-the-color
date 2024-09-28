@@ -1,0 +1,6 @@
+---
+import {Image, getImage} from "astro:assets";
+import myBackground from "../images/textures/002.jpg";
+const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
+---
+<div class="absolute rounded-full inset-0 h-full bg-cover blur-lg animate-slowpulse" style={`background-image: url(${optimizedBackground.src})`}></div>

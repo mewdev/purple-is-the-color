@@ -4,6 +4,8 @@ import '@fontsource-variable/inter';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { ViewTransitions, fade } from 'astro:transitions';
+import Background from '../components/Background.astro';
+import Noise from '../components/Noise.astro';
 interface Props {
 	title: string;
 }
@@ -22,7 +24,10 @@ const { title } = Astro.props;
 		<ViewTransitions />
 		<title>{title}</title>
 	</head>
+
 	<body class="bg-matteBlack" transition:animate={fade({ duration: '1.5s'})}>
+		<Background />
+		<!-- <Noise /> -->
 
 <!-- Layout -->
 <div class="relative flex flex-col h-dvh justify-between w-screen">

@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getImage, Image } from "astro:assets";
+import Background from '../components/Background.astro';
 import myBackground from "../images/home_background_transparent.png";
 const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 ---
 
 <Layout title="index">
 		<section id="hero-section" class="flex flex-col h-full justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: linear-gradient(to top, black 30%, #6A3160 85%);`}>
-
-			<div class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom" style={`background-image: url(${optimizedBackground.src})`}></div>
-			<Image class="md:hidden w-full h-full object-contain" src={optimizedBackground.src} alt="Purple is the Color" height={"1080"} width={"1920"} />
+			<Background />
+			<div class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom filter grayscale-[0.5]" style={`background-image: url(${optimizedBackground.src})`}></div>
+			<Image class="md:hidden w-full h-full object-contain grayscale-[0.5]" src={optimizedBackground.src} alt="Purple is the Color" height={"1080"} width={"1920"} />
 
 			<h1 class="text-white z-10 font-monumentBold mt-auto text-4xl md:text-8xl lg:text-9xl uppercase flex flex-col justify-between">
 				<div class="flex justify-between">
