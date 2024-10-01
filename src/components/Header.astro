@@ -7,9 +7,34 @@ import MobileMenu from "./MobileMenu.astro"
 const currentPath = Astro.url.pathname
 const isHome = currentPath === '/'
 ---
-<header class="h-[5lvh] z-10 fixed flex items-center w-screen">
+<header class="h-[5lvh] z-20 fixed flex items-center w-screen">
     {isHome ? <Social /> : <HomeLink />}
     <HeaderLine />
     <Navbar />
+    <MobileMenu />
 </header>
 
+<script>
+    document.addEventListener('DOMContentLoaded',() => {
+        const toggleMenu = document.getElementById('toggle-menu')
+        const mobileMenu = document.getElementById('mobile-menu')
+
+        let menuOpen = false
+    
+        toggleMenu?.addEventListener('click', () => {
+            if (menuOpen === false) {
+                menuOpen = true
+                mobileMenu?.classList.remove('hidden')
+                mobileMenu?.classList.add('fixed') 
+                mobileMenu?.classList.add('flex')
+                toggleMenu.innerText = 'Close'
+            } else if (menuOpen === true) {
+                menuOpen = false
+                mobileMenu?.classList.add('hidden')
+                mobileMenu?.classList.remove('fixed') 
+                mobileMenu?.classList.remove('flex')
+                toggleMenu.innerText = 'Menu' 
+            }
+        })
+    })
+</script>

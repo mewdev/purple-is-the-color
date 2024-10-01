@@ -7,8 +7,8 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
 ---
 
 <Layout title="index">
-		<section id="hero-section" class="flex flex-col h-full justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: linear-gradient(to top, black 30%, #6A3160 85%);`}>
-			<div class="fixed md:hidden inset-0 h-full z-10" style="background: linear-gradient(to top, black 30%, transparent 60%);"></div>
+		<section id="hero-section" class="flex flex-col h-full justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: linear-gradient(to top, #171717 30%, #6A3160 85%);`}>
+			<div class="fixed md:hidden inset-0 h-full z-10" style="background: linear-gradient(to top, black 45%, transparent 60%);"></div>
 			<Background />
 			<div class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom filter grayscale-[0.5]" style={`background-image: url(${optimizedBackground.src})`}></div>
 			<Image class="md:hidden w-full h-full object-contain grayscale-[0.5]" src={optimizedBackground.src} alt="Purple is the Color" height={"1080"} width={"1920"} />
