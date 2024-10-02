@@ -1,8 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MarqueeQuote from '../components/MarqueeQuote.astro';
+import { AstroSeo } from '@astrolib/seo';
 ---
-<Layout title="about">
+<AstroSeo
+title="About"
+description="About"
+canonical="https://www.purpleisthecolor.com/"
+openGraph={{
+  url: 'https://www.url.ie/a',
+  title: 'Open Graph Title',
+  description: 'Open Graph Description',
+  images: [
+	{
+	  url: 'https://www.example.ie/og-image-01.jpg',
+	  width: 800,
+	  height: 600,
+	  alt: 'Og Image Alt',
+	  type: 'image/jpeg',
+	},
+	{
+	  url: 'https://www.example.ie/og-image-02.jpg',
+	  width: 900,
+	  height: 800,
+	  alt: 'Og Image Alt Second',
+	  type: 'image/jpeg',
+	},
+	{ url: 'https://www.example.ie/og-image-03.jpg' },
+	{ url: 'https://www.example.ie/og-image-04.jpg' },
+  ],
+  site_name: 'SiteName',
+}}
+twitter={{
+  handle: '@handle',
+  site: '@site',
+  cardType: 'summary_large_image',
+}}
+/>
+<Layout>
 		<section id="about" class="flex flex-col h-full justify-end">
 	<p class="font-inter font-extralight text-matteWhite uppercase md:text-3xl leading-none text-justify">
 		“Epic" is Purple is the Color’s second album and a clarion call in jazz. Following their successful debut “Unmasked,” the quartet returns with a bold vision. Bandleader Simon Raab describes their aspiration: “The Beatles of jazz, that’s the plan.
