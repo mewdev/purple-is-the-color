@@ -41,3 +41,42 @@ const { title } = Astro.props;
 
 
 
+<script is:inline data-astro-rerun>
+
+    document.addEventListener('astro:page-load',() => {
+        const toggleMenu = document.getElementById('toggle-menu')
+        const mobileMenu = document.getElementById('mobile-menu')
+		const mobileLinks = document.querySelectorAll('.mobile-link')
+		let menuOpen = false
+		
+		console.log(menuOpen)
+
+		mobileLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				mobileMenu?.classList.add('hidden')
+				menuOpen = false
+			})
+		})
+		// Menu toggle button function
+    
+        toggleMenu?.addEventListener('click', () => {
+            if (menuOpen === false) {
+				mobileMenu?.classList.remove('hidden')
+                mobileMenu?.classList.add('fixed') 
+                mobileMenu?.classList.add('flex')
+                toggleMenu.innerText = 'Close'
+				menuOpen = !menuOpen
+				console.log(menuOpen)
+            } else if (menuOpen === true) {
+				mobileMenu?.classList.add('hidden')
+                mobileMenu?.classList.remove('fixed') 
+                mobileMenu?.classList.remove('flex')
+                toggleMenu.innerText = 'Menu' 
+				menuOpen = !menuOpen
+				console.log(menuOpen)
+            }
+        })
+
+
+    })
+</script>
