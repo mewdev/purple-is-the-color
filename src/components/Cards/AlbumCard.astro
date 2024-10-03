@@ -1,26 +1,21 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+const  { cover, url, alt, shopUrl } = Astro.props;
 ---
     <article
-        class='group relative aspect-video h-96 w-[36rem] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl'
+        class='grayscale hover:grayscale-0 group relative aspect-square h-full w-full overflow-hidden shadow-sm hover:shadow-2xl'
     >
-        <img
-            class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300'
-            src='https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=3175&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            alt=''
-        />
+<Image height={1280} width={1920} alt={alt} src={cover} class="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300"/>
         <div
-            class='absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/60 group-hover:transition-all group-hover:duration-500'
+            class='absolute inset-0 bg-gradient-to-t md:from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t md:group-hover:from-black/80 from-black/80 group-hover:transition-all group-hover:duration-500'
         >
 
             <div
-                class='absolute inset-0 max-w-[100%] flex justify-center items-center py-2 opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300'>
-            
-
+                class='absolute inset-0 max-w-[100%] flex justify-center items-center py-2 md:opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300'>
                 <div class='flex gap-2'>
-                    <Icon name="ph:music-notes-simple" class="w-20 h-20"/>
+                    <a target="_blank" href={url}><Icon name="ph:music-notes-simple" class="md:w-16 md:h-16 w-8 h-8"/></a>
+                    <a target="_blank" href={shopUrl}><Icon name="ph:shopping-cart-simple" class="md:w-16 md:h-16 w-8 h-8"/></a>
                 </div>
         </div>
     </article>
-
-

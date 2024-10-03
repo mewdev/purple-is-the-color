@@ -12,6 +12,7 @@ const albumsCollection = defineCollection({
         message: "Cover image must be at least 400 pixels wide!",
       }),
       url: z.string(),
+      shopUrl: z.string(),
     }),
 });
 
