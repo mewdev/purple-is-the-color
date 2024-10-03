@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { AstroSeo } from '@astrolib/seo';
+import GalleryCarousel from '../components/GalleryCarousel.astro';
 ---
 <AstroSeo
 title="Press"
@@ -37,6 +38,39 @@ twitter={{
 }}
 />
 <Layout>
-		<section id="shows" class="flex flex-col h-full justify-center">
+		<section id="shows" class="flex flex-col h-full justify-end">
+			<div class="flex flex-col md:flex-row items-center justify-end md:justify-between h-full">
+				<div class="md:w-1/2 w-full">
+					<ul class="flex flex-col">
+					<li class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite">
+						<span class="inline-block ml-auto mr-5 md:mr-10">Media</span>
+						<div class="flex gap-2">
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">Review 1</a>
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">Review 2</a>
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">Review 3</a>
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">Review 4</a>
+						</div>
+					</li>
+					<li class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite">
+						<span class="inline-block ml-auto mr-5 md:mr-10">Presskit</span>
+						<div class="flex gap-2">
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">English</a>
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">Deutsch</a>
+						</div>
+					</li>
+					<li class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite">
+						<span class="inline-block ml-auto mr-5 md:mr-10">Stagerider</span>
+						<div class="flex gap-2">
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">View</a>
+							<a class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer" href="#">Download</a>
+						</div>
+					</li>
+					</ul>
+				</div>
+				<div class="md:w-1/2 w-full">
+					<GalleryCarousel />
+				</div>
+			</div>
+
 		</section>
 </Layout>

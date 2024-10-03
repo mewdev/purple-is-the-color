@@ -2,6 +2,15 @@
 import { z, defineCollection } from "astro:content";
 
 // 2. Define your collections
+
+const galleryCollection = defineCollection({
+  type: "data",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      cover: image(),
+    }),
+});
 const albumsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
@@ -43,4 +52,5 @@ export const collections = {
   albums: albumsCollection,
   videos: videosCollection,
   stageband: stagebandCollection,
+  gallery: galleryCollection,
 };
