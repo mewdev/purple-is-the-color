@@ -1,53 +1,65 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import MarqueeQuote from '../components/MarqueeQuote.astro';
-import { AstroSeo } from '@astrolib/seo';
+import Layout from "../layouts/Layout.astro";
+import MarqueeQuote from "../components/MarqueeQuote.astro";
+import { AstroSeo } from "@astrolib/seo";
 ---
+
 <AstroSeo
-title="About"
-description="About"
-canonical="https://www.purpleisthecolor.com/about"
-openGraph={{
-  url: 'https://www.url.ie/a',
-  title: 'Open Graph Title',
-  description: 'Open Graph Description',
-  images: [
-	{
-	  url: 'https://www.example.ie/og-image-01.jpg',
-	  width: 800,
-	  height: 600,
-	  alt: 'Og Image Alt',
-	  type: 'image/jpeg',
-	},
-	{
-	  url: 'https://www.example.ie/og-image-02.jpg',
-	  width: 900,
-	  height: 800,
-	  alt: 'Og Image Alt Second',
-	  type: 'image/jpeg',
-	},
-	{ url: 'https://www.example.ie/og-image-03.jpg' },
-	{ url: 'https://www.example.ie/og-image-04.jpg' },
-  ],
-  site_name: 'SiteName',
-}}
-twitter={{
-  handle: '@handle',
-  site: '@site',
-  cardType: 'summary_large_image',
-}}
+  title="About"
+  description="About"
+  canonical="https://www.purpleisthecolor.com/about"
+  openGraph={{
+    url: "https://www.url.ie/a",
+    title: "Open Graph Title",
+    description: "Open Graph Description",
+    images: [
+      {
+        url: "https://www.example.ie/og-image-01.jpg",
+        width: 800,
+        height: 600,
+        alt: "Og Image Alt",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.example.ie/og-image-02.jpg",
+        width: 900,
+        height: 800,
+        alt: "Og Image Alt Second",
+        type: "image/jpeg",
+      },
+      { url: "https://www.example.ie/og-image-03.jpg" },
+      { url: "https://www.example.ie/og-image-04.jpg" },
+    ],
+    site_name: "SiteName",
+  }}
+  twitter={{
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
 />
 <Layout>
-		<section id="about" class="flex flex-col h-full justify-end">
-	<p class="font-inter font-extralight text-matteWhite uppercase md:text-3xl leading-none text-justify">
-		“Epic" is Purple is the Color’s second album and a clarion call in jazz. Following their successful debut “Unmasked,” the quartet returns with a bold vision. Bandleader Simon Raab describes their aspiration: “The Beatles of jazz, that’s the plan.
-		This album showcases compositions by Štěpán Flagar, Martin Kocián, and Michał Wierzgoń, contributing to a vibrant musical unity. Raab emphasizes the narrative of great ventures and painful new beginnings: “The Titanic had to sink to be reborn as a legend.”
+  <section id="about" class="flex flex-col h-full justify-end">
+    <p
+      class="font-inter font-extralight text-matteWhite uppercase md:text-3xl leading-none text-justify"
+    >
+      “Epic" is Purple is the Color’s second album and a clarion call in jazz.
+      Following their successful debut “Unmasked,” the quartet returns with a
+      bold vision. Bandleader Simon Raab describes their aspiration: “The
+      Beatles of jazz, that’s the plan. This album showcases compositions by
+      Štěpán Flagar, Martin Kocián, and Michał Wierzgoń, contributing to a
+      vibrant musical unity. Raab emphasizes the narrative of great ventures and
+      painful new beginnings: “The Titanic had to sink to be reborn as a
+      legend.” Tracks like <span class="font-thin italic">“Unsearchable,”</span>
+      <span class="font-thin italic">“Techno-Epic,”</span> and <span
+        class="font-thin italic">“When I See Your Face,”</span
+      > invite listeners on a transformative journey. The band practices radical
+      self-restraint, exploring their instruments without digital shortcuts. Raab
+      believes true autonomy emerges from deep exploration. With this release, the
+      quartet proves they cannot be overlooked in the international jazz scene, marking
+      one of the albums of the year!
+    </p>
 
-		Tracks like <span class="font-thin italic">“Unsearchable,”</span> <span class="font-thin italic">“Techno-Epic,”</span> and <span class="font-thin italic">“When I See Your Face,”</span> invite listeners on a transformative journey. The band practices radical self-restraint, exploring their instruments without digital shortcuts. Raab believes true autonomy emerges from deep exploration.
-		
-		With this release, the quartet proves they cannot be overlooked in the international jazz scene, marking one of the albums of the year!	</p>
-
-		<MarqueeQuote />
-
-		</section>
+    <MarqueeQuote />
+  </section>
 </Layout>

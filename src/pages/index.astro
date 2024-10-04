@@ -1,63 +1,85 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import { getImage, Image } from "astro:assets";
-import { AstroSeo } from '@astrolib/seo';
-import Background from '../components/Background.astro';
+import { AstroSeo } from "@astrolib/seo";
+import Background from "../components/Background.astro";
 import myBackground from "../images/home_background_transparent.png";
-const optimizedBackground = await getImage({src: myBackground, format: 'webp'});
+const optimizedBackground = await getImage({
+  src: myBackground,
+  format: "webp",
+});
 ---
 
 <AstroSeo
-title="Home"
-description="Home"
-canonical="https://www.purpleisthecolor.com/"
-openGraph={{
-  url: 'https://www.url.ie/a',
-  title: 'Open Graph Title',
-  description: 'Open Graph Description',
-  images: [
-	{
-	  url: 'https://www.example.ie/og-image-01.jpg',
-	  width: 800,
-	  height: 600,
-	  alt: 'Og Image Alt',
-	  type: 'image/jpeg',
-	},
-	{
-	  url: 'https://www.example.ie/og-image-02.jpg',
-	  width: 900,
-	  height: 800,
-	  alt: 'Og Image Alt Second',
-	  type: 'image/jpeg',
-	},
-	{ url: 'https://www.example.ie/og-image-03.jpg' },
-	{ url: 'https://www.example.ie/og-image-04.jpg' },
-  ],
-  site_name: 'SiteName',
-}}
-twitter={{
-  handle: '@handle',
-  site: '@site',
-  cardType: 'summary_large_image',
-}}
+  title="Home"
+  description="Home"
+  canonical="https://www.purpleisthecolor.com/"
+  openGraph={{
+    url: "https://www.url.ie/a",
+    title: "Open Graph Title",
+    description: "Open Graph Description",
+    images: [
+      {
+        url: "https://www.example.ie/og-image-01.jpg",
+        width: 800,
+        height: 600,
+        alt: "Og Image Alt",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.example.ie/og-image-02.jpg",
+        width: 900,
+        height: 800,
+        alt: "Og Image Alt Second",
+        type: "image/jpeg",
+      },
+      { url: "https://www.example.ie/og-image-03.jpg" },
+      { url: "https://www.example.ie/og-image-04.jpg" },
+    ],
+    site_name: "SiteName",
+  }}
+  twitter={{
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
 />
 <Layout>
-	
-		<section id="hero-section" class="flex flex-col h-full justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom" style={`background-image: linear-gradient(to top, #171717 30%, #6A3160 85%);`}>
-			<div class="fixed md:hidden inset-0 h-full z-10" style="background: linear-gradient(to top, black 45%, transparent 60%);"></div>
-			<Background />
-			<div class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom filter grayscale-[0.5]" style={`background-image: url(${optimizedBackground.src})`}></div>
-			<Image class="md:hidden w-full h-full object-contain grayscale-[0.5]" src={optimizedBackground.src} alt="Purple is the Color" height={"1080"} width={"1920"} />
+  <section
+    id="hero-section"
+    class="flex flex-col h-full justify-center bg-no-repeat bg-contain md:bg-contain bg-bottom"
+    style={`background-image: linear-gradient(to top, #171717 30%, #6A3160 85%);`}
+  >
+    <div
+      class="fixed md:hidden inset-0 h-full z-10"
+      style="background: linear-gradient(to top, black 45%, transparent 60%);"
+    >
+    </div>
+    <Background />
+    <div
+      class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom filter grayscale-[0.5]"
+      style={`background-image: url(${optimizedBackground.src})`}
+    >
+    </div>
+    <Image
+      class="md:hidden w-full h-full object-contain grayscale-[0.5]"
+      src={optimizedBackground.src}
+      alt="Purple is the Color"
+      height={"1080"}
+      width={"1920"}
+    />
 
-			<h1 class="text-white z-10 font-monumentBold mt-auto text-4xl md:text-8xl lg:text-9xl uppercase flex flex-col justify-between">
-				<div class="flex justify-between">
-				  <span>Purple</span>
-				  <span>is</span>
-				</div>
-				<div class="flex justify-between">
-				  <span>the</span>
-				  <span>Color</span>
-				</div>
-			  </h1>
-			</section>
-	</Layout>
+    <h1
+      class="text-white z-10 font-monumentBold mt-auto text-4xl md:text-8xl lg:text-9xl uppercase flex flex-col justify-between"
+    >
+      <div class="flex justify-between">
+        <span>Purple</span>
+        <span>is</span>
+      </div>
+      <div class="flex justify-between">
+        <span>the</span>
+        <span>Color</span>
+      </div>
+    </h1>
+  </section>
+</Layout>

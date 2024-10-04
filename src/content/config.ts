@@ -8,7 +8,9 @@ const galleryCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      cover: image(),
+      src: image().refine((img) => img.width >= 1080, {
+        message: "Cover image must be at least 1080 pixels wide!",
+      }),
     }),
 });
 const albumsCollection = defineCollection({

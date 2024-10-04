@@ -1,6 +1,11 @@
 ---
-import {Image, getImage} from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import noise from "../images/noise-transparent.png";
-const optimizedBackground = await getImage({src: noise, format: 'webp'});
+const optimizedBackground = await getImage({ src: noise, format: "webp" });
 ---
-<div class="fixed top-[-50%] left-[-50%] right-[-50%] bottom-[-50%] bg-transparent bg-repeat opacity-90 animate-noise z-10 visible" style={`background-image: url(${optimizedBackground.src})`}></div>
+
+<div
+  class="fixed top-[-50%] left-[-50%] right-[-50%] bottom-[-50%] bg-transparent bg-repeat opacity-90 animate-noise z-10 visible"
+  style={`background-image: url(${optimizedBackground.src})`}
+>
+</div>

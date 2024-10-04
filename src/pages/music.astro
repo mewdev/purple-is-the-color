@@ -1,64 +1,76 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import { AstroSeo } from '@astrolib/seo';
-import AlbumCard from '../components/Cards/AlbumCard.astro';
-import VideoCard from '../components/Cards/VideoCard.astro';
-const allAlbums = await getCollection('albums');
-const allVideos = await getCollection('videos');
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { AstroSeo } from "@astrolib/seo";
+import AlbumCard from "../components/Cards/AlbumCard.astro";
+import VideoCard from "../components/Cards/VideoCard.astro";
+const allAlbums = await getCollection("albums");
+const allVideos = await getCollection("videos");
 ---
+
 <AstroSeo
-title="Music"
-description="Music"
-canonical="https://www.purpleisthecolor.com/music"
-openGraph={{
-  url: 'https://www.url.ie/a',
-  title: 'Open Graph Title',
-  description: 'Open Graph Description',
-  images: [
-	{
-	  url: 'https://www.example.ie/og-image-01.jpg',
-	  width: 800,
-	  height: 600,
-	  alt: 'Og Image Alt',
-	  type: 'image/jpeg',
-	},
-	{
-	  url: 'https://www.example.ie/og-image-02.jpg',
-	  width: 900,
-	  height: 800,
-	  alt: 'Og Image Alt Second',
-	  type: 'image/jpeg',
-	},
-	{ url: 'https://www.example.ie/og-image-03.jpg' },
-	{ url: 'https://www.example.ie/og-image-04.jpg' },
-  ],
-  site_name: 'SiteName',
-}}
-twitter={{
-  handle: '@handle',
-  site: '@site',
-  cardType: 'summary_large_image',
-}}
+  title="Music"
+  description="Music"
+  canonical="https://www.purpleisthecolor.com/music"
+  openGraph={{
+    url: "https://www.url.ie/a",
+    title: "Open Graph Title",
+    description: "Open Graph Description",
+    images: [
+      {
+        url: "https://www.example.ie/og-image-01.jpg",
+        width: 800,
+        height: 600,
+        alt: "Og Image Alt",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.example.ie/og-image-02.jpg",
+        width: 900,
+        height: 800,
+        alt: "Og Image Alt Second",
+        type: "image/jpeg",
+      },
+      { url: "https://www.example.ie/og-image-03.jpg" },
+      { url: "https://www.example.ie/og-image-04.jpg" },
+    ],
+    site_name: "SiteName",
+  }}
+  twitter={{
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
 />
 <Layout>
-		<section id="shows" class="flex flex-col h-full justify-end gap-2">
-			<div class="grid grid-cols-2 md:grid-cols-5 gap-2 max-w-screen">
+  <section id="shows" class="flex flex-col h-full justify-end gap-2">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-2 max-w-screen">
+      {
+        allAlbums.map((album) => {
+          return (
+            <AlbumCard
+              cover={album.data.cover}
+              url={album.data.url}
+              alt={album.data.title}
+              shopUrl={album.data.shopUrl}
+            />
+          );
+        })
+      }
+    </div>
 
-				{allAlbums.map(album => {
-					return(
-						<AlbumCard cover={album.data.cover} url={album.data.url} alt={album.data.title} shopUrl={album.data.shopUrl} />
-					)
-				})}
-	
-				</div>
-
-			<div class="grid grid-cols-3 md:grid-cols-5 gap-2 max-w-screen">
-			{allVideos.map(video => {
-				return(
-						<VideoCard cover={video.data.thumbnail} url={video.data.url} alt={video.data.title} />
-				)
-			})}
-			</div>
-		</section>
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-2 max-w-screen">
+      {
+        allVideos.map((video) => {
+          return (
+            <VideoCard
+              cover={video.data.thumbnail}
+              url={video.data.url}
+              alt={video.data.title}
+            />
+          );
+        })
+      }
+    </div>
+  </section>
 </Layout>
