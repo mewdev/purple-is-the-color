@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
+import BandsInTown from "../components/BandsInTown.astro";
 ---
 
 <AstroSeo
@@ -38,11 +39,7 @@ import { AstroSeo } from "@astrolib/seo";
   }}
 />
 <Layout title="shows">
-  <section id="shows" class="flex flex-col h-full justify-end items-end">
-    <p
-      class="font-inter font-extralight text-matteWhite uppercase md:text-3xl leading-none text-justify"
-    >
-      To be annouced
-    </p>
+  <section id="shows" class="flex flex-col h-full justify-end items-center">
+    <BandsInTown />
   </section>
 </Layout>
