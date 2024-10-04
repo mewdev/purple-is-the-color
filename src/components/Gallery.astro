@@ -1,0 +1,38 @@
+---
+import { getAlbumImages } from "../utils/gallery";
+import { Image } from "astro:assets";
+import ImageCard from "../components/Cards/ImageCard.astro";
+import mobileImage from "../content/gallery/PHOTO-2024-07-04-18-26-24.jpg";
+const { gallery } = Astro.props;
+const images = await getAlbumImages(gallery);
+---
+
+<div class="hidden md:block md:columns-2">
+  {
+    images.map((image, index) => {
+      return (
+        <ImageCard index={index} url={image.src}>
+          <Image
+            loading="lazy"
+            class={`absolute object-cover w-full ${index % 3 ? "aspect-square" : "aspect-video"}`}
+            src={image}
+            width={1920}
+            height={1280}
+            alt={"Gallery item 1"}
+          />
+        </ImageCard>
+      );
+    })
+  }
+</div>
+
+<div class="columns-1 md:hidden">
+  <Image
+    loading="lazy"
+    class="grayscale hover:grayscale-0 object-cover w-full aspect-square"
+    src={mobileImage}
+    width={1920}
+    height={1280}
+    alt={"Gallery item 1"}
+  />
+</div>

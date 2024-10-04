@@ -1,11 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
-import { getAlbumImages } from "../utils/gallery";
+// import { getAlbumImages } from "../utils/gallery";
 import { Image } from "astro:assets";
 
-const { gallery } = Astro.props;
-const images = await getAlbumImages(gallery);
+// import ImageCard from "../components/Cards/ImageCard.astro";
+
+// const { gallery } = Astro.props;
+// const images = await getAlbumImages(gallery);
+import Gallery from "../components/Gallery.astro";
 ---
 
 <AstroSeo
@@ -47,7 +50,7 @@ const images = await getAlbumImages(gallery);
     <div
       class="flex flex-col md:flex-row items-center justify-end md:justify-between h-full"
     >
-      <div class="md:w-1/2 w-full place-self-end">
+      <div class="w-full md:w-1/2 place-self-end">
         <ul class="flex flex-col">
           <li
             class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite"
@@ -104,25 +107,8 @@ const images = await getAlbumImages(gallery);
           </li>
         </ul>
       </div>
-      <div class="md:w-1/2 w-full flex flex-col place-self-end">
-        <div class="gap-4 columns-2">
-          {
-            images.map((image, index) => {
-              return (
-                <a target="_blank" href={image.src}>
-                  <Image
-                    loading="lazy"
-                    class={`grayscale hover:grayscale-[0] object-cover w-full ${index % 3 ? "aspect-square" : "aspect-video"} mb-6`}
-                    src={image}
-                    width={1920}
-                    height={1280}
-                    alt={"Gallery item 1"}
-                  />
-                </a>
-              );
-            })
-          }
-        </div>
+      <div class="w-full md:w-1/2 md:flex md:flex-col md:place-self-end">
+        <Gallery />
         <a
           class="place-self-end relative uppercase font-inter font-extralight italic text-xs text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
           href="#">Download gallery</a

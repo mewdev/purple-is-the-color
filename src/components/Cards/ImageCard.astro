@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+const { url, index } = Astro.props;
+---
+
+<article
+  class=`grayscale hover:grayscale-0 group relative ${index % 3 ? "aspect-square" : "aspect-video"} h-full w-full overflow-hidden shadow-sm hover:shadow-2xl`
+>
+  <slot />
+  <div
+    class="absolute inset-0 bg-gradient-to-t md:from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t md:group-hover:from-black/80 from-black/80 group-hover:transition-all group-hover:duration-500"
+  >
+    <div
+      class="absolute inset-0 max-w-[100%] flex justify-center items-center py-2 md:opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300"
+    >
+      <div class="flex gap-2">
+        <a target="_blank" href={url}
+          ><Icon name="ph:eye" class="md:w-16 md:h-16 w-8 h-8" /></a
+        >
+      </div>
+    </div>
+  </div>
+</article>
