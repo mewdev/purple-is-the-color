@@ -19,7 +19,10 @@ import Noise from "../components/Noise.astro";
     <ViewTransitions />
   </head>
 
-  <body class="bg-matteBlack" transition:animate={fade({ duration: "1s" })}>
+  <body
+    class="bg-matteBlack select-none"
+    transition:animate={fade({ duration: "1s" })}
+  >
     <Background />
     <!-- <Noise /> -->
     <!-- Layout -->
@@ -34,6 +37,7 @@ import Noise from "../components/Noise.astro";
 </html>
 
 <script is:inline data-astro-rerun>
+  // maybe solve with Astro if possible
   document.addEventListener("astro:page-load", () => {
     const toggleMenu = document.getElementById("toggle-menu");
     const mobileMenu = document.getElementById("mobile-menu");

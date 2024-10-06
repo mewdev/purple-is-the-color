@@ -7,7 +7,7 @@ const { cover, url, alt, shopUrl } = Astro.props;
 <article
   class="grayscale hover:grayscale-0 group relative aspect-square h-full w-full overflow-hidden shadow-sm hover:shadow-2xl"
 >
-  <Image height={1280} width={1920} alt={alt} src={cover} class="" />
+  <Image inferSize alt={alt} src={cover} class="" />
   <div
     class="absolute inset-0 bg-gradient-to-t md:from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t md:group-hover:from-black/80 from-black/80 group-hover:transition-all group-hover:duration-500"
   >

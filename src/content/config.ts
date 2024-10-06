@@ -3,16 +3,19 @@ import { z, defineCollection } from "astro:content";
 
 // 2. Define your collections
 
-const galleryCollection = defineCollection({
-  type: "data",
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      src: image().refine((img) => img.width >= 1080, {
-        message: "Cover image must be at least 1080 pixels wide!",
+const pressCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    link: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string(),
       }),
-    }),
+    ),
+  }),
 });
+
 const albumsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
@@ -54,5 +57,5 @@ export const collections = {
   albums: albumsCollection,
   videos: videosCollection,
   stageband: stagebandCollection,
-  gallery: galleryCollection,
+  press: pressCollection,
 };

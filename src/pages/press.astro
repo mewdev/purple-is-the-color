@@ -1,119 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
-// import { getAlbumImages } from "../utils/gallery";
+import image from "../images/pressPhoto.jpg";
 import { Image } from "astro:assets";
-
-// import ImageCard from "../components/Cards/ImageCard.astro";
-
-// const { gallery } = Astro.props;
-// const images = await getAlbumImages(gallery);
-import Gallery from "../components/Gallery.astro";
+import { getCollection } from "astro:content";
+const pressCollection = await getCollection("press");
 ---
 
-<AstroSeo
-  title="Press"
-  description="Press"
-  canonical="https://www.purpleisthecolor.com/press"
-  openGraph={{
-    url: "https://www.url.ie/a",
-    title: "Open Graph Title",
-    description: "Open Graph Description",
-    images: [
-      {
-        url: "https://www.example.ie/og-image-01.jpg",
-        width: 800,
-        height: 600,
-        alt: "Og Image Alt",
-        type: "image/jpeg",
-      },
-      {
-        url: "https://www.example.ie/og-image-02.jpg",
-        width: 900,
-        height: 800,
-        alt: "Og Image Alt Second",
-        type: "image/jpeg",
-      },
-      { url: "https://www.example.ie/og-image-03.jpg" },
-      { url: "https://www.example.ie/og-image-04.jpg" },
-    ],
-    site_name: "SiteName",
-  }}
-  twitter={{
-    handle: "@handle",
-    site: "@site",
-    cardType: "summary_large_image",
-  }}
-/>
 <Layout>
-  <section id="shows" class="flex flex-col h-full justify-end">
-    <div
-      class="flex flex-col md:flex-row items-center justify-end md:justify-between h-full"
-    >
-      <div class="w-full md:w-1/2 place-self-end">
-        <ul class="flex flex-col">
-          <li
-            class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite"
-          >
-            <span class="inline-block ml-auto mr-5 md:mr-10">Media</span>
-            <div class="flex gap-2">
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">Review 1</a
-              >
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">Review 2</a
-              >
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">Review 3</a
-              >
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">Review 4</a
-              >
-            </div>
-          </li>
-          <li
-            class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite"
-          >
-            <span class="inline-block ml-auto mr-5 md:mr-10">Presskit</span>
-            <div class="flex gap-2">
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">English</a
-              >
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">Deutsch</a
-              >
-            </div>
-          </li>
-          <li
-            class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite"
-          >
-            <span class="inline-block ml-auto mr-5 md:mr-10">Stagerider</span>
-            <div class="flex gap-2">
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">View</a
-              >
-              <a
-                class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                href="#">Download</a
-              >
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="w-full md:w-1/2 md:flex md:flex-col md:place-self-end">
-        <Gallery />
-        <a
-          class="place-self-end relative uppercase font-inter font-extralight italic text-xs text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-          href="#">Download gallery</a
-        >
-      </div>
+  <section id="shows" class="flex h-full justify-end">
+    <div class="w-full md:w-1/2 place-self-end">
+      {
+        pressCollection.map((item) => {
+          const link = item.data.link;
+          return (
+            <ul class="flex flex-col">
+              <li class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite">
+                <span class="inline-block ml-auto mr-5 md:mr-10">
+                  {item.data.title}
+                </span>
+                <div class="flex gap-2">
+                  {link.map((link) => {
+                    return (
+                      <a
+                        class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
+                        href={link.url}
+                      >
+                        {link.name}
+                      </a>
+                    );
+                  })}
+                </div>
+              </li>
+            </ul>
+          );
+        })
+      }
+    </div>
+
+    <div class="w-full md:w-1/2 md:flex md:flex-col md:place-self-end">
+      <Image
+        src={image}
+        height={1200}
+        width={990}
+        alt={"Photo of the band Purple is the Color"}
+        class="object-cover w-full h-full grayscale"
+      />
     </div>
   </section>
 </Layout>

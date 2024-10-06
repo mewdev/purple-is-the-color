@@ -8,8 +8,7 @@ const { cover, url, alt } = Astro.props;
   class="grayscale hover:grayscale-0 group relative aspect-video h-full w-full overflow-hidden shadow-sm hover:shadow-2xl"
 >
   <Image
-    height={1280}
-    width={1920}
+    inferSize
     alt={alt}
     src={cover}
     class="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300"
