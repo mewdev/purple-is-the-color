@@ -5,6 +5,7 @@ import { AstroSeo } from "@astrolib/seo";
 const allConcerts = await getCollection("stageband");
 ---
 
+<!-- Marginy, fonts? -->
 <AstroSeo
   title="Stageband"
   description="Stageband"
@@ -64,7 +65,7 @@ const allConcerts = await getCollection("stageband");
                 href={concert.data.url}
                 target="_blank"
               >
-                <span>{day + "."}</span>
+                <span class="text-2xl md:text-4xl">{day + "."}</span>
                 <span class="inline-block italic text-xs md:text-xl ml-auto mr-5 md:mr-10">
                   {concert.data.title}
                 </span>

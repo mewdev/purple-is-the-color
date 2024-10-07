@@ -1,16 +1,17 @@
 ---
-import HeaderLine from "./HeaderLine.astro"
-import Social from "./Social.astro"
-import Navbar from "./Navbar.astro"
-import HomeLink from "./HomeLink.astro"
-import MobileMenu from "./MobileMenu.astro"
-const currentPath = Astro.url.pathname
-const isHome = currentPath === '/'
+import HeaderLine from "./HeaderLine.astro";
+import Social from "./Social.astro";
+import Navbar from "./Navbar.astro";
+import HomeLink from "./HomeLink.astro";
+import MobileMenu from "./MobileMenu.astro";
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
 ---
-<header class="h-[5lvh] z-20 fixed flex items-center w-screen">
-    {isHome ? <Social /> : <HomeLink />}
-    <HeaderLine />
-    <Navbar />
-    <MobileMenu />
-</header>
 
+<!-- Margin fix -->
+<header class="h-[5lvh] fixed z-20 flex items-center w-screen px-2">
+  {isHome ? <Social /> : <HomeLink />}
+  <HeaderLine />
+  <Navbar />
+  <MobileMenu />
+</header>

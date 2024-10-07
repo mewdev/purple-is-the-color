@@ -1,29 +1,36 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 const links = [
-    {
-        name: 'ph:instagram-logo-fill',
-        link: 'https://www.instagram.com/purple_Is_the_color_/'
-    },
-    {
-        name: 'ph:facebook-logo-fill',
-        link: 'https://www.facebook.com/purpleisthecolor/'
-    },
-    {
-        name: 'ph:youtube-logo-fill',
-        link: 'https://www.youtube.com/@purpleisthecolor1606/'
-    },
-    {
-        name: 'ph:spotify-logo-fill',
-        link: 'https://open.spotify.com/artist/6yuXwREXpDXSn4wtvCnP2Y/'
-    }
-]
+  {
+    name: "ph:instagram-logo-fill",
+    link: "https://www.instagram.com/purple_Is_the_color_/",
+  },
+  {
+    name: "ph:facebook-logo-fill",
+    link: "https://www.facebook.com/purpleisthecolor/",
+  },
+  {
+    name: "ph:youtube-logo-fill",
+    link: "https://www.youtube.com/@purpleisthecolor1606/",
+  },
+  {
+    name: "ph:spotify-logo-fill",
+    link: "https://open.spotify.com/artist/6yuXwREXpDXSn4wtvCnP2Y/",
+  },
+];
 ---
-<ul class="flex gap-2 items-center justify-center">
 
-    {links.map(item => <li class="hover:scale-75 after:transition-all after:duration-500 cursor-pointer">
-        
+<ul class="flex gap-2 items-center justify-center">
+  {
+    links.map((item) => (
+      <li class="hover:scale-75 after:transition-all after:duration-500 cursor-pointer">
         <a target="_blank" href={item.link}>
-            <Icon name={item.name} class="text-matteWhite h-8 w-8" />
-        </a></li>)}
+          <Icon
+            name={item.name}
+            class="text-matteWhite h-6 w-6 md:h-7 md:w-7"
+          />
+        </a>
+      </li>
+    ))
+  }
 </ul>
