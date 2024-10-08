@@ -24,8 +24,12 @@ dialog {
 }
 
 .modal__content {
-  @apply flex gap-6 !important;
+  @apply flex h-full justify-center !important;
 }
+
+/* .modal__content a {
+  @apply text-3xl md:text-5xl !important;
+} */
 
 .modal__close button {
   @apply text-white bg-matteBlack rounded-none text-center font-monumentBold uppercase text-sm !important;
