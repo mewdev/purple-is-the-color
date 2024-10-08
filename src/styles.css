@@ -10,3 +10,28 @@
   font-weight: normal;
   font-style: normal;
 }
+
+dialog {
+  @apply h-[50dvh] md:w-[50vw] w-dvw !important;
+}
+
+.modal {
+  @apply border-0 rounded-none !important;
+}
+
+.modal__inner {
+  @apply flex flex-col justify-between h-full !important;
+}
+
+.modal__content {
+  @apply flex gap-6 !important;
+}
+
+.modal__close button {
+  @apply text-white bg-matteBlack rounded-none text-center font-monumentBold uppercase text-sm !important;
+
+  &:hover,
+  &:focus {
+    @apply bg-green-500;
+  }
+}

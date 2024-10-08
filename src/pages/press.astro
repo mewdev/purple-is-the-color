@@ -5,31 +5,34 @@ import image from "../images/pressPhoto.jpg";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 const pressCollection = await getCollection("press");
+import { Modal } from "accessible-astro-components";
 ---
 
 <Layout>
-  <section id="shows" class="flex h-full justify-end">
+  <section id="shows" class="flex flex-col md:flex-row h-full justify-end">
     <div class="w-full md:w-1/2 place-self-end">
       {
         pressCollection.map((item) => {
           const link = item.data.link;
           return (
-            <ul class="flex flex-col">
-              <li class="font-inter font-extralight text-3xl md:text-5xl text-matteWhite">
-                <span class="inline-block ml-auto mr-5 md:mr-10">
+            <ul class="flex">
+              <li class="font-inter flex md:flex-col sd:items-center font-extralight text-3xl md:text-5xl text-matteWhite">
+                <button
+                  class="relative font-inter capitalize font-extralight text-3xl md:text-5xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointerr"
+                  id={item.data.title}
+                >
                   {item.data.title}
-                </span>
-                <div class="flex gap-2">
-                  {link.map((link) => {
-                    return (
-                      <a
-                        class="relative font-inter font-extralight italic text-xs md:text-xl text-matteWhite after:absolute after:bg-matteWhite after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer"
-                        href={link.url}
-                      >
-                        {link.name}
-                      </a>
-                    );
-                  })}
+                </button>
+                <div>
+                  <Modal triggerId={item.data.title}>
+                    {link.map((link) => {
+                      return (
+                        <a target="_blank" href={link.url}>
+                          {link.name}
+                        </a>
+                      );
+                    })}
+                  </Modal>
                 </div>
               </li>
             </ul>
