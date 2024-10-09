@@ -8,6 +8,42 @@ const pressCollection = await getCollection("press");
 import { Modal } from "accessible-astro-components";
 ---
 
+<AstroSeo
+  title="Press"
+  titleTemplate="%s — Purple is the Color"
+  description="Get the latest press releases, reviews, and interviews about Purple is the Color."
+  canonical="https://www.purpleisthecolor.com/press"
+  openGraph={{
+    url: "https://www.purpleisthecolor.com/press",
+    title: "%s — Purple is the Color",
+    description:
+      "Get the latest press releases, reviews, and interviews about Purple is the Color. Media can contact us for press kits, photos, and interview requests.",
+    images: [
+      {
+        url: "https://www.example.ie/og-image-01.jpg",
+        width: 800,
+        height: 600,
+        alt: "Og Image Alt",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.example.ie/og-image-02.jpg",
+        width: 900,
+        height: 800,
+        alt: "Og Image Alt Second",
+        type: "image/jpeg",
+      },
+      { url: "https://www.example.ie/og-image-03.jpg" },
+      { url: "https://www.example.ie/og-image-04.jpg" },
+    ],
+    site_name: "SiteName",
+  }}
+  twitter={{
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
+/>
 <Layout>
   <!-- PX-4 global! -->
   <section id="shows" class="flex flex-col md:flex-row h-full justify-end px-4">

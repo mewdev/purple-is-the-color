@@ -10,12 +10,14 @@ const allVideos = await getCollection("videos");
 
 <AstroSeo
   title="Music"
-  description="Music"
+  titleTemplate="%s — Purple is the Color"
+  description="Listen to the music of Purple is the Color. Stream their acclaimed albums on Spotify and other music streaming platforms, or watch the latest music videos from the Austrian-Czech jazz quartet."
   canonical="https://www.purpleisthecolor.com/music"
   openGraph={{
-    url: "https://www.url.ie/a",
-    title: "Open Graph Title",
-    description: "Open Graph Description",
+    url: "https://www.purpleisthecolor.com/music",
+    title: "%s — Purple is the Color",
+    description:
+      "Listen to the music of Purple is the Color. Stream their acclaimed albums on Spotify and other music streaming platforms, or watch the latest music videos from the Austrian-Czech jazz quartet.",
     images: [
       {
         url: "https://www.example.ie/og-image-01.jpg",
