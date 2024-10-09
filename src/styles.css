@@ -12,7 +12,7 @@
 }
 
 dialog {
-  @apply h-[50dvh] md:w-[50vw] w-dvw !important;
+  @apply md:w-[50vw] w-dvw !important;
 }
 
 .modal {

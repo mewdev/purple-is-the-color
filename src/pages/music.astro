@@ -43,7 +43,8 @@ const allVideos = await getCollection("videos");
   }}
 />
 <Layout>
-  <section id="shows" class="flex flex-col h-full justify-end gap-2">
+  <!-- PX-4 global! -->
+  <section id="shows" class="flex flex-col h-full justify-end gap-2 px-4">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-2 max-w-screen">
       {
         allAlbums.map((album) => {
