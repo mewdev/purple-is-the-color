@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.2.0",
-    "accessible-astro-components": "^2.3.6"
+    "accessible-astro-components": "^2.3.6",
+    "tailwind-scrollbar": "^3.1.0"
   }
 }
