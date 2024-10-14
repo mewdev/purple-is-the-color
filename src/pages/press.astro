@@ -47,7 +47,7 @@ import { Modal } from "accessible-astro-components";
 <Layout>
   <!-- PX-4 global! -->
   <section id="shows" class="flex flex-col md:flex-row h-full justify-end px-4">
-    <div class="w-full md:w-1/2 place-self-end">
+    <!-- <div class="w-full md:w-1/2 place-self-end">
       {
         pressCollection.map((item) => {
           const link = item.data.link;
@@ -74,6 +74,34 @@ import { Modal } from "accessible-astro-components";
                       );
                     })}
                   </Modal>
+                </div>
+              </li>
+            </ul>
+          );
+        })
+      }
+    </div> -->
+
+    <div class="w-full md:w-1/2 place-self-end">
+      {
+        pressCollection.map((item) => {
+          const link = item.data.link;
+          return (
+            <ul class="flex">
+              <li class="font-inter flex justify-between w-full font-extralight text-3xl md:text-5xl text-matteWhite">
+                <span class="text-2xl md:text-4xl">{item.data.title}</span>
+                <div>
+                  <ul class="flex gap-2">
+                    {link.map((link) => {
+                      return (
+                        <li class="font-inter text-base">
+                          <a target="_blank" href={link.url}>
+                            {link.name}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               </li>
             </ul>

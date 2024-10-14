@@ -1,4 +1,4 @@
 ---
 title: presskit
-link: [{ name: "English", url: "#" }, { name: "Deutsch", url: "#" }]
+link: [{ name: "En", url: "#" }, { name: "De", url: "#" }]
 ---
