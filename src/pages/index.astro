@@ -59,12 +59,12 @@ const optimizedBackground = await getImage({
     </div>
     <Background />
     <div
-      class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom filter grayscale-[0.5]"
+      class="hidden md:block absolute inset-0 bg-no-repeat bg-contain bg-bottom filter grayscale-[0.15]"
       style={`background-image: url(${optimizedBackground.src})`}
     >
     </div>
     <Image
-      class="md:hidden w-full h-full object-contain grayscale-[0.5]"
+      class="md:hidden w-full h-full object-contain filter grayscale-[0.15]"
       src={optimizedBackground.src}
       alt="Purple is the Color"
       height={"1080"}
