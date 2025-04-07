@@ -1,18 +1,28 @@
 ---
 const links = [
-    { name: 'Stageband', href: '/stageband' },
-    { name: 'About', href: '/about' },
-    { name: 'Shows', href: '/shows' },
-    { name: 'Music', href: '/music' },
-    { name: 'Press', href: '/press' },
-]
+  { name: "Stageband", href: "/stageband" },
+  { name: "About", href: "/about" },
+  { name: "Shows", href: "/shows" },
+  { name: "Music", href: "/music" },
+  { name: "Press", href: "/press" },
+];
+import Sponsors from "../Sponsors.astro";
 ---
-<div id="mobile-menu" class="bg-matteBlack/95 transform:top-1/2 hidden md:hidden h-dvh w-dvw flex-col justify-center items-center top-0 left-0">
-    <ul class="flex flex-col h-dvh justify-center md:hidden w-dvw md:gap-2">
-        {links.map(item => (
-            <li class="mobile-link relative text-justify uppercase text-5xl font-extrabold text-matteWhite after:absolute after:bg-white after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
-                <a href={item.href}>{item.name}</a>
-            </li>
-        ))}
-    </ul>
+
+<div
+  id="mobile-menu"
+  class="bg-matteBlack/95 transform:top-1/2 hidden md:hidden h-dvh w-dvw flex-col justify-center items-center top-0 left-0"
+>
+  <ul
+    class="flex flex-col h-dvh justify-center items-start md:hidden w-dvw md:gap-2"
+  >
+    {
+      links.map((item) => (
+        <li class="mobile-link relative text-justify uppercase text-5xl font-extrabold text-matteWhite after:absolute after:bg-white after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+          <a href={item.href}>{item.name}</a>
+        </li>
+      ))
+    }
+    <div class="mt-4"><Sponsors /></div>
+  </ul>
 </div>
